@@ -1,4 +1,14 @@
 import React from "react";
+import './footer.css';
+import Lottie from "lottie-react";
+import whatsApp from "../../assets/landingPage/footer/whatsapp.png";
+import facebook from "../../assets/landingPage/footer/facebook.png";
+import twitter from "../../assets/landingPage/footer/twitter.png";
+import instagram from "../../assets/landingPage/footer/instagram.png";
+import robo from "../../assets/landingPage/footer/footerRobo.json";
+
+
+
 // import brandLogo from "../../assets/Header & footer/header/medichainlogo.svg";
 
 export default function Footer() {
@@ -16,6 +26,13 @@ export default function Footer() {
                 Crafting the next-level of user experience <br></br> and data
                 security.
               </p>
+              <div className="row justify-content-around w-75 pb-3">
+                  <img src={facebook} alt="facebook" className="footerIcon"/>
+                  <img src={instagram} alt="instagram" className="footerIcon"/>
+                  <img src={twitter} alt="twitter" className="footerIcon"/>
+                  <img src={whatsApp} alt="whatsapp" className="footerIcon"/>
+
+              </div>
             </div>
             <div className="col-lg-6">
               <div className="row">
@@ -41,7 +58,13 @@ export default function Footer() {
             </div>
             <div className="col-lg-2">
               <div className="col-lg-12">
-                <h5>Follow Us</h5>
+              <Lottie
+                animationData={robo}
+                loop={true}
+                autoplay={true}
+                style={{ width: "200px", height: "200px" }}
+                className=""
+              />
               </div>
             </div>
           </div>

@@ -3,11 +3,42 @@ import "./contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faMobileRetro } from "@fortawesome/free-solid-svg-icons";
 import { faTelegram } from "@fortawesome/free-brands-svg-icons";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const SignupSchema = yup.object().shape({
+  name: yup.string().required("*Please enter your name."),
+  email: yup
+    .string()
+    .email("*Please enter a valid email address.")
+    .required("*Email is required."),
+  message: yup.string().required("*Enter Your Message.")
+});
 
 export default function Contact() {
+
+  const {
+    register,
+    handleSubmit: handleSubmit,
+    formState: { errors: client },
+  } = useForm({
+    resolver: yupResolver(SignupSchema),
+  });
+
+  //Function Call to validate doctor Address
+  const onSubmit = async (data) => {
+    try {
+      console.log(data)
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+
   return (
     <>
-    <div className="container-fluid" id="action8">
+      <div className="container-fluid" id="action8">
         <div className="container  pt-5 pb-5 ">
           <div className="row">
             <h3 className="text-center fw-bold fst-italic mb-4">CONTACT US</h3>
@@ -18,7 +49,10 @@ export default function Contact() {
                 industry.
               </p>
               <div className="d-flex mt-2">
-                <div style={{ width: "40px", height: "40px" }} className="bg-warning d-flex align-items-center justify-content-center">
+                <div
+                  style={{ width: "40px", height: "40px" }}
+                  className="bg-warning d-flex align-items-center justify-content-center"
+                >
                   <FontAwesomeIcon
                     icon={faMobileRetro}
                     className="bg-warning p-2 icon"
@@ -31,11 +65,11 @@ export default function Contact() {
               </div>
 
               <div className="d-flex mt-2">
-              <div style={{ width: "40px", height: "40px" }} className="bg-warning d-flex align-items-center justify-content-center">
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    className="p-2 icon"
-                  />
+                <div
+                  style={{ width: "40px", height: "40px" }}
+                  className="bg-warning d-flex align-items-center justify-content-center"
+                >
+                  <FontAwesomeIcon icon={faEnvelope} className="p-2 icon" />
                 </div>
 
                 <div className="ms-2 mt-1">
@@ -44,39 +78,76 @@ export default function Contact() {
               </div>
 
               <div className="d-flex mt-2">
-              <div style={{ width: "40px", height: "40px" }} className="bg-warning d-flex align-items-center justify-content-center">
+                <div
+                  style={{ width: "40px", height: "40px" }}
+                  className="bg-warning d-flex align-items-center justify-content-center"
+                >
                   <FontAwesomeIcon
                     icon={faTelegram}
                     className="bg-warning p-2 icon"
                   />
                 </div>
                 <div className="ms-2 mt-1">
-                  <spam className="fw-bold">Address : </spam>692 Eagle Lane Duluth, Coimbatore.
+                  <spam className="fw-bold">Address : </spam>692 Eagle Lane
+                  Duluth, Coimbatore.
                 </div>
               </div>
             </div>
             <div className="col-lg-6">
               <h2 className="contact_h2">SEND US MESSAGE</h2>
               <p>Please don’t hesitate to chat with me just drop a line.</p>
-              <div className="row">
-                <div className="col-lg-6">
-                <input type="text" placeholder="Name" className="form-control"/>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="row">
+                  <div className="col-lg-6">
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      className="form-control"
+                      {...register("name")}
+                    />
+                    {client.name && (
+                      <p className="text-danger fw-bold">
+                        {client.name.message}
+                      </p>
+                    )}
+                  </div>
+                  <div className="col-lg-6">
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      className="form-control"
+                      {...register("email")}
+                    />
+                    {client.email && (
+                      <p className="text-danger fw-bold">
+                        {client.email.message}
+                      </p>
+                    )}
+                  </div>
+                  <div className="col-lg-12 mt-3">
+                    <textarea
+                      type="text"
+                      placeholder="Message Area"
+                      className="form-control"
+                      {...register("message")}
+                    />
+                    {client.message && (
+                      <p className="text-danger fw-bold">
+                        {client.message.message}
+                      </p>
+                    )}
+                  </div>
                 </div>
-                <div className="col-lg-6">
-                <input type="email" placeholder="Email" className="form-control"/>
-                </div>
-                <div className="col-lg-12 mt-3">
-                <textarea type="text" placeholder="Message Area" className="form-control"/>
-                </div>
-               
-              </div>
-              <button className="bg-warning border-0 p-2 mt-3">Send Message</button>
+
+                <button type="submit" className="bg-warning border-0 p-2 mt-3">
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
 
-      
       <div className="container-fluid pt-5 pb-5 contactBg">
         <div className="container">
           <div className="row">
@@ -111,8 +182,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-
-      
     </>
   );
 }

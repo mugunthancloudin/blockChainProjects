@@ -3,6 +3,7 @@ import { animateScroll as scroll } from "react-scroll";
 import "./home.css";
 import Lottie from "lottie-react";
 import homeLottie from "../../assets/landingPage/Home/homelottie.json";
+import scrollUp from "../../assets/landingPage/Home/scrollUp.json";
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -52,24 +53,27 @@ export default function Home() {
               />
             </div>{" "}
           </div>
-          <button
-            onClick={scrollToTop}
-            style={{
-              position: "fixed",
-              bottom: "20px",
-              right: "20px",
-              backgroundColor: "#007bff",
-              color: "#fff",
-              padding: "10px 15px",
-              borderRadius: "5px",
-              cursor: "pointer",
-              opacity: showScrollButton ? 1 : 0,
-              visibility: showScrollButton ? "visible" : "hidden",
-              transition: "opacity 0.3s, visibility 0.3s",
-            }}
-          >
-            Scroll to Top
-          </button>
+          <div>
+          <Lottie
+                animationData={scrollUp}
+                loop={true}
+                autoplay={true}
+                onClick={scrollToTop}
+                style={{
+                  position: "fixed",
+                  bottom: "20px",
+                  right: "20px",
+                  height: "100px",
+                  cursor: "pointer",
+                  opacity: showScrollButton ? 1 : 0,
+                  visibility: showScrollButton ? "visible" : "hidden",
+                  transition: "opacity 0.3s, visibility 0.3s",
+                }}
+                className="mt-3"
+              />
+          </div>
+          
+        
         </div>
       </div>
     </>
