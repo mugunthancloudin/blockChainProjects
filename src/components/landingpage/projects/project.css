@@ -46,7 +46,7 @@
 }
 
 .projectTitleContent {
-  margin-left: 50%;
+ justify-content: center;
 }
 
 @media only screen and (max-width: 500px) {

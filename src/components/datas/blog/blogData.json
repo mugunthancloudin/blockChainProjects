@@ -29,7 +29,7 @@
   "process": [
     {
       "id": 1,
-      "title": "Requirement Gathering",
+      "title": "Requirement",
       "description": "We follow the first and foremost priority of gathering requirements, resources, and information to begin our project.",
       "icon": "./images/process/requirement gathering.svg"
     },
