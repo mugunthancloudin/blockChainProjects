@@ -1,38 +1,119 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import { NavLink as Link } from "react-router-dom";
-// import brandLogo from "../../../assets/header/logo.png";
+import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import "./navbar.css";
 
-export default function Scrollbar() {
+function Scrollbar() {
+  const scrollToTop = () => {
+    scroll.scrollToTop({
+      duration: 500,
+      smooth: "linear",
+    });
+  };
+
   return (
-    <Navbar className="navbar bg-secondary" sticky="top" expand="lg">
+    <>
+    <Navbar expand="lg" className="bg-body-tertiary" sticky="top">
       <Container fluid>
-        <Link to="/" className="navbar-brand">
-          <div className="d-flex align-items-center">
-            {/* <img src={brandLogo} width={40} alt="Brand Logo" className="navlogo" /> */}
-            <h4 className="ms-3 mt-3">Doc  Verification</h4>
-          </div>
-        </Link>
-        <Navbar.Toggle aria-controls="navbar-dark-example" />
-        <Navbar.Collapse id="navbar-dark-example" className="justify-content-end fw-bold">
-          <Nav className="justify-content-end">
-            <NavLink to="/" text="Home" />
-            <NavLink to="/owner" text="Owner" />
-            <NavLink to="/verifier" text="Verifier" />
-            <NavLink to="/company" text="Company" />
-            <NavLink to="/candidate" text="Candidate" />
-            <NavLink to="/contact" text="Contact us" />
+        <Navbar.Brand onClick={scrollToTop} style={{ cursor: "pointer" }} className="fw-bold fst-italic">
+        SecureSync
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav className="ms-auto navbar-nav-scroll" navbarScroll>
+            <ScrollLink
+              to="action1"
+              // smooth={true}
+              duration={100}
+              spy={true}
+              exact="true"
+              className="me-3 text-dark fw-bold mt-2 link-underline link-underline-opacity-0"
+            >
+              Home
+            </ScrollLink>
+            <ScrollLink
+              to="action2"
+              // smooth={true}
+              duration={200}
+              spy={true}
+              exact="true"
+              className="me-3 text-dark fw-bold mt-2 link-underline link-underline-opacity-0"
+            >
+              About
+            </ScrollLink>
+
+            <NavDropdown
+              title="Project"
+              id="navbarScrollingDropdown"
+              className="me-3 text-dark fw-bold  link-underline link-underline-opacity-0"
+            >
+              <ScrollLink
+                to="action3"
+                // smooth={true}
+                duration={300}
+                spy={true}
+                exact="true"
+                className="dropdown-item"
+              >
+                Bull's Call
+              </ScrollLink>
+              <ScrollLink
+                to="action4"
+                // smooth={true}
+                duration={400}
+                spy={true}
+                exact="true"
+                className="dropdown-item"
+              >
+                Medi_Chain
+              </ScrollLink>
+              <ScrollLink
+                to="action5"
+                // smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                className="dropdown-item"
+              >
+                Doc_verification
+              </ScrollLink>
+            </NavDropdown>
+            <ScrollLink
+              to="action6"
+              // smooth={true}
+              duration={600}
+              spy={true}
+              exact="true"
+              className="me-3 text-dark fw-bold mt-2 link-underline link-underline-opacity-0"
+            >
+              Streamline
+            </ScrollLink>
+            <ScrollLink
+              to="action7"
+              // smooth={true}
+              duration={700}
+              spy={true}
+              exact="true"
+              className="me-3 text-dark fw-bold mt-2 link-underline link-underline-opacity-0"
+            >
+              Blogs
+            </ScrollLink>
+            <ScrollLink
+              to="action8"
+              // smooth={true}
+              duration={800}
+              spy={true}
+              exact="true"
+              className="me-3 text-dark fw-bold mt-2 link-underline link-underline-opacity-0"
+            >
+              Contact Us
+            </ScrollLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </>
   );
 }
 
-const NavLink = ({ to, text }) => (
-  <Link to={to} className="nav-link fw-bold">
-    <div className="glow-on-hover">{text}</div>
-  </Link>
-);
+export default Scrollbar;

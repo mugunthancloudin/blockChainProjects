@@ -9,8 +9,8 @@ import left from "../../assets/landingPage/projects/images/leftSignol.png";
 export default function Project() {
   return (
     <>
-      <div className="container-fluid pt-5 pb-5">
-        <div className="row"><h1 className="text-center fw-bold fst-italic">Projects</h1></div>
+      <div className="container-fluid projectsBg pt-5 pb-5" id="action3">
+        <div className="row"><h1 className="text-center projectTitleH1 fw-bold ">Projects</h1></div>
         <div className="container">
           <div className="row">
             <div className="col-lg-6  mt-5 d-flex align-items-start">
@@ -20,13 +20,13 @@ export default function Project() {
             </div>
             <div className="col-lg-6">
               <h1 className="projectH1 d-flex text-end">
-                <spam className="arrSpam">
+                {/* <spam className="arrSpam">
                   <img
                     src={left}
                     alt="left-signol"
                     className="projectLeftImage"
                   />{" "}
-                </spam>
+                </spam> */}
                 <spam className="projectTitleContent text-wrap">
                   Bull's-Call
                 </spam>
@@ -55,7 +55,7 @@ export default function Project() {
   
         </div>
 
-        <div className="container">
+        <div className="container" id="action4">
           <div className="row">
             <div className="col-lg-6">
               <h1 className="projectH1 d-flex text-end">
@@ -63,13 +63,13 @@ export default function Project() {
                 <spam className="MediChainTitleContent text-wrap">
                   MediChain
                 </spam>
-                <spam className="arrMediChainSpam">
+                {/* <spam className="arrMediChainSpam">
                   <img
                     src={right}
                     alt="left-signol"
                     className="projectLeftImage"
                   />{" "}
-                </spam>
+                </spam> */}
               </h1>
               <p className="fw-bold fst-italic mt-3">
                 Bulls Call is a betting game that is now available on the
@@ -100,7 +100,7 @@ export default function Project() {
         
         </div>
 
-        <div className="container">
+        <div className="container" id="action5">
           <div className="row">
             <div className="col-lg-6  mt-5 d-flex align-items-start">
               <video width="100%" loop muted controls className="rounded-3">
@@ -109,13 +109,13 @@ export default function Project() {
             </div>
             <div className="col-lg-6">
               <h1 className="projectH1 d-flex text-end">
-                <spam className="arrSpam">
+                {/* <spam className="arrSpam">
                   <img
                     src={left}
                     alt="left-signol"
                     className="projectLeftImage"
                   />{" "}
-                </spam>
+                </spam> */}
                 <spam className="projectTitleContent text-wrap">
                   Doc-Verify
                 </spam>

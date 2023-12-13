@@ -6,7 +6,7 @@ import "./about.css";
 export default function About() {
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid ">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
@@ -14,7 +14,7 @@ export default function About() {
                 animationData={animationData}
                 loop={true}
                 autoplay={true}
-                style={{ width: "500px", height: "500px" }}
+                style={{ width: "100%"}}
                 className="mt-3"
               />
             </div>
@@ -43,7 +43,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="container-fluid aboutBg">
+      <div className="container-fluid aboutBg" id="action2">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">

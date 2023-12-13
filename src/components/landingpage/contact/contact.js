@@ -7,7 +7,7 @@ import { faTelegram } from "@fortawesome/free-brands-svg-icons";
 export default function Contact() {
   return (
     <>
-    <div className="container-fluid">
+    <div className="container-fluid" id="action8">
         <div className="container  pt-5 pb-5 ">
           <div className="row">
             <h3 className="text-center fw-bold fst-italic mb-4">CONTACT US</h3>

@@ -19,11 +19,12 @@ export default function Process() {
 
   return (
     <>
-      <div className="container-fluid pt-5 pb-5">
+      <div className="container-fluid pt-5 pb-5" id="action6">
         <div className="container">
           <div className="row">
-            <h1 className="fw-bold processH1 mb-4">Process We Follow</h1>
+            <h1 className="fw-bold processH1 text-center mb-4">Process We Follow</h1>
           </div>
+          
           {/* Use col-lg-3 layout on larger screens */}
           <div className="row d-none d-lg-flex">
             {process.map((card) => (
@@ -50,17 +51,17 @@ export default function Process() {
           </div>
 
           {/* Use carousel on smaller screens */}
-          <div className="d-lg-none">
+          <div className="d-lg-none ">
             <Slider {...settings}>
               {process.map((card) => (
-                <div key={card.id}>
+                <div key={card.id} className="p-2">
                   <div className="card">
                     {/* Your card content */}
                     <img
                       src={card.icon}
                       alt={card.title}
                       className="card-img-top p-4"
-                      style={{ height: "100px", objectFit: "contain" }}
+                      style={{ height: "100px", objectFit: "contain", width: "100%" }}
                     />
                     <div className="card-body">
                       <h5 className="card-title text-center">

@@ -8,7 +8,7 @@ export default function Blog() {
   console.log(projects);
   return (
     <>
-    <div className="container-fluid blogBg pt-5 pb-5">
+    <div className="container-fluid blogBg pt-5 pb-5" id="action7">
     <div className="container">
         <h1 className="text-center blogH1">A Glance of Our Blogs</h1>
         <div className="row mt-5">

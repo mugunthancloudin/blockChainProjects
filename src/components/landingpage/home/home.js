@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { animateScroll as scroll } from "react-scroll";
 import "./home.css";
 import Lottie from "lottie-react";
 import homeLottie from "../../assets/landingPage/Home/homelottie.json";
 
 export default function Home() {
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  const handleScroll = () => {
+    setShowScrollButton(window.scrollY > 200);
+  };
+
+  const scrollToTop = () => {
+    scroll.scrollToTop({
+      duration: 500,
+      smooth: "easeInOutQuart",
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className="container-fluid homeBg">
+      <div className="container-fluid homeBg" id="action1">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 text-white">
@@ -31,6 +52,24 @@ export default function Home() {
               />
             </div>{" "}
           </div>
+          <button
+            onClick={scrollToTop}
+            style={{
+              position: "fixed",
+              bottom: "20px",
+              right: "20px",
+              backgroundColor: "#007bff",
+              color: "#fff",
+              padding: "10px 15px",
+              borderRadius: "5px",
+              cursor: "pointer",
+              opacity: showScrollButton ? 1 : 0,
+              visibility: showScrollButton ? "visible" : "hidden",
+              transition: "opacity 0.3s, visibility 0.3s",
+            }}
+          >
+            Scroll to Top
+          </button>
         </div>
       </div>
     </>
