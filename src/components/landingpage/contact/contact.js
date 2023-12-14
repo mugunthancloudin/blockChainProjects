@@ -41,7 +41,7 @@ export default function Contact() {
       <div className="container-fluid" id="action8">
         <div className="container  pt-5 pb-5 ">
           <div className="row">
-            <h3 className="text-center fw-bold fst-italic mb-4">CONTACT US</h3>
+            <h3 className="text-center fw-bold fst-italic contactH3 mb-4">CONTACT US</h3>
             <div className="col-lg-6">
               <h3 className="contact_h3">CONTACT INFORMATION</h3>
               <p>
@@ -148,7 +148,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="container-fluid pt-5 pb-5 contactBg">
+      {/* <div className="container-fluid pt-5 pb-5 contactBg">
         <div className="container">
           <div className="row">
             <div className="col-lg-3 col-md-6 mt-3 d-grid align-items-center">
@@ -181,7 +181,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

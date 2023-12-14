@@ -19,17 +19,22 @@
   }
 
   .contact_h3{
-    font-family: Roboto ;
+    font-family: "Open Sans";
     font-weight: 700;
     margin-top: 13%;
   }
 
   .contact_h2{
-    font-family: Roboto ;
+    font-family: "Open Sans";
     font-weight: 700;
     margin-top: 5%;
   }
 
   .icon{
     font-size: px;
+  }
+
+  .contactH3{
+    font-family: "Open Sans";
+    font-weight: 900;
   }

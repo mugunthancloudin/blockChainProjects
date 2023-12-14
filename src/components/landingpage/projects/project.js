@@ -1,8 +1,8 @@
 import React from "react";
 import "./project.css";
-import BullsCallvideoSource from "../../assets/landingPage/projects/video/BullsCall.mp4";
-import MediChainvideoSource from "../../assets/landingPage/projects/video/MediChain.mp4";
-import DocVerificationvideoSource from "../../assets/landingPage/projects/video/Doc-Verify.mp4";
+import BullsCallSource from "../../assets/landingPage/projects/images/tradeing.jpg";
+import MediChainSource from "../../assets/landingPage/projects/images/mediChain.jpg";
+import DocVerificationSource from "../../assets/landingPage/projects/images/documentVerification.jpg";
 import right from "../../assets/landingPage/projects/images/rightSignol.png";
 import left from "../../assets/landingPage/projects/images/leftSignol.png";
 
@@ -15,14 +15,16 @@ export default function Project() {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-lg-6  mt-5 d-flex align-items-start">
-              <video width="100%" loop muted controls className="rounded-3">
-                <source src={BullsCallvideoSource} type="video/mp4" />
-              </video>
+            <div className="col-lg-6 mt-5 d-flex align-items-start">
+              <img
+                src={BullsCallSource}
+                alt="bullscallImg"
+                className="projectImage"
+              />
             </div>
             <div className="col-lg-6">
               <h1 className="projectH1 text-center">Bull's-Call</h1>
-              <p className="fw-bold fst-italic mt-3">
+              <p className=" fst-italic mt-3">
                 Bulls Call is a betting game that is now available on the
                 Polygon Mumbai Testnet and is based on cryptocurrency candle
                 charts. Both PCs and mobile devices can use it. The owner
@@ -48,9 +50,9 @@ export default function Project() {
 
         <div className="container" id="action4">
           <div className="row ">
-            <div className="col-lg-6 order-lg-1 order-sm-2">
+            <div className="col-lg-6 pt-5 order-lg-1 order-md-2 order-2 ">
               <h1 className="projectH1  text-center">MediChain</h1>
-              <p className="fw-bold fst-italic mt-3">
+              <p className=" fst-italic mt-3">
                 Bulls Call is a betting game that is now available on the
                 Polygon Mumbai Testnet and is based on cryptocurrency candle
                 charts. Both PCs and mobile devices can use it. The owner
@@ -71,10 +73,12 @@ export default function Project() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 mt-5 d-flex align-items-start order-lg-2 order-sm-1">
-              <video width="100%" loop muted controls className="rounded-3">
-                <source src={MediChainvideoSource} type="video/mp4" />
-              </video>
+            <div className="col-lg-6 mt-5 d-flex align-items-start order-lg-2 order-md-1 order-1">
+              <img
+                src={MediChainSource}
+                alt="medi-chain"
+                className="projectImage"
+              />
             </div>
           </div>
         </div>
@@ -82,13 +86,18 @@ export default function Project() {
         <div className="container" id="action5">
           <div className="row">
             <div className="col-lg-6  mt-5 d-flex align-items-start">
-              <video width="100%" loop muted controls className="rounded-3">
-                <source src={DocVerificationvideoSource} type="video/mp4" />
-              </video>
+              <img
+                src={DocVerificationSource}
+                alt="document-verification"
+                className="projectImage"
+              />
+              {/* <video width="100%" loop muted controls className="rounded-3">
+                <source src={DocVerificationSource} type="video/mp4" />
+              </video> */}
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6 pt-5">
               <h1 className="projectH1 text-center">Doc-Verify</h1>
-              <p className="fw-bold fst-italic mt-3">
+              <p className="fst-italic mt-3">
                 Bulls Call is a betting game that is now available on the
                 Polygon Mumbai Testnet and is based on cryptocurrency candle
                 charts. Both PCs and mobile devices can use it. The owner
